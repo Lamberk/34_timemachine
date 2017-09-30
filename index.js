@@ -76,7 +76,7 @@ class TimerWidget{
   }
   overlay() {
     this.overlay = document.getElementById("overlay");
-    this.overlay.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+    this.overlay.style.visibility = (this.overlay.style.visibility == "visible") ? "hidden" : "visible";
   }
   update(secsLeft){
     var minutes = Math.floor(secsLeft / 60);
