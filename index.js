@@ -103,7 +103,7 @@ function main(){
 
   function handleIntervalTick(){
     var secsLeft = timer.calculateSecsLeft()
-    if (!secsLeft):
+    if (!secsLeft)
       timerWiget.overlay()
     timerWiget.update(secsLeft)
   }
