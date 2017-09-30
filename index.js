@@ -75,8 +75,8 @@ class TimerWidget{
     this.seconds_element = this.timerContainer.getElementsByClassName('js-timer-seconds')[0]
   }
   overlay() {
-    this.overlay = document.getElementById("overlay");
-    this.overlay.style.visibility = (this.overlay.style.visibility == "visible") ? "hidden" : "visible";
+    this.overlay_elem = document.getElementById("overlay");
+    this.overlay_elem.style.visibility = (this.overlay_elem.style.visibility == "visible") ? "hidden" : "visible";
   }
   update(secsLeft){
     var minutes = Math.floor(secsLeft / 60);
