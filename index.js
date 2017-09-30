@@ -69,6 +69,7 @@ class TimerWidget{
     this.overlayContainer.setAttribute("id", "overlay")
     this.overlayContainer.setAttribute("style", "visibility: hidden; position: absolute; left: 0px; top: 0px; width:100%; height:100%; text-align:center; z-index: 1000;")
     this.overlayContainer.appendChild(overlayImage)
+    rootTag.insertBefore(this.overlayContainer, rootTag.firstChild)
 
     this.minutes_element = this.timerContainer.getElementsByClassName('js-timer-minutes')[0]
     this.seconds_element = this.timerContainer.getElementsByClassName('js-timer-seconds')[0]
