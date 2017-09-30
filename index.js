@@ -53,13 +53,29 @@ class TimerWidget{
     // adds HTML tag to current page
     this.timerContainer = document.createElement('div')
 
-    this.timerContainer.setAttribute("style", "height: 100px;")
+
+    /* border-radius: 10px; */
+    /* height: 100px; */
+
+    this.timerContainer.setAttribute("style", "position: fixed; z-index: 2147483647; background-color: #f2f2f2; border-left: 0px; border-style: solid; padding-left: 10px; padding-right: 10px;")
     this.timerContainer.innerHTML = TEMPLATE
 
     rootTag.insertBefore(this.timerContainer, rootTag.firstChild)
 
+    this.overlayImage = document.createElement("img")
+    this.overlayImage.setAttribute("src", "http://blog.firstreference.com/wp-content/uploads/2013/09/return-to-work.jpg")
+
+    this.overlayContainer = document.createElement('div')
+    this.overlayContainer.setAttribute("id", "overlay")
+    this.overlayContainer.setAttribute("style", "visibility: hidden; position: absolute; left: 0px; top: 0px; width:100%; height:100%; text-align:center; z-index: 1000;")
+    this.overlayContainer.appendChild(overlayImage)
+
     this.minutes_element = this.timerContainer.getElementsByClassName('js-timer-minutes')[0]
     this.seconds_element = this.timerContainer.getElementsByClassName('js-timer-seconds')[0]
+  }
+  overlay() {
+    el = document.getElementById("overlay");
+    el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
   }
   update(secsLeft){
     var minutes = Math.floor(secsLeft / 60);
@@ -87,6 +103,8 @@ function main(){
 
   function handleIntervalTick(){
     var secsLeft = timer.calculateSecsLeft()
+    if (!secsLeft):
+      timerWiget.overlay()
     timerWiget.update(secsLeft)
   }
 
