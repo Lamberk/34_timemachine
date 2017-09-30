@@ -1,4 +1,4 @@
-var TIMEOUT_IN_SECS = 3 * 60
+var TIMEOUT_IN_SECS = 3 * 10
 var TEMPLATE = '<h1><span class="js-timer-minutes">00</span>:<span class="js-timer-seconds">00</span></h1>'
 
 function padZero(number){
@@ -63,7 +63,7 @@ class TimerWidget{
     rootTag.insertBefore(this.timerContainer, rootTag.firstChild)
 
     this.overlayImage = document.createElement("img")
-    this.overlayImage.setAttribute("src", "http://blog.firstreference.com/wp-content/uploads/2013/09/return-to-work.jpg")
+    this.overlayImage.setAttribute("src", "https://image.ibb.co/nLaiVb/return_to_work.jpg")
 
     this.overlayContainer = document.createElement('div')
     this.overlayContainer.setAttribute("id", "overlay")
